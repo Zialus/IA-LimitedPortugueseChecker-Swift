@@ -33,11 +33,15 @@ let preposicao_Masculino_Plural = ["pelos", "nos"]
 let preposicao_Feminino_Plural = ["pelas", "nas"]
 //--------------------END DATABASE-------------------------//
 
-var masculino = false
-var feminino = false
-var plural = false
-var com_artigo = false
+var masculino_substantivo = false
+var feminino_substantivo = false
+var plural_substantivo = false
 
+var artigo_preposicao = false
+
+var masculino_preposicao = false
+var feminino_preposicao = false
+var plural_preposicao = false
 
 welcomeMessage()
 
