@@ -18,13 +18,13 @@ let artigo_Feminino_Plural_Maiusculo = ["As"]
 let artigo_Feminino = ["a"]
 let artigo_Feminino_Plural = ["as"]
 
-let substantivos_Masculino = ["cacador", "sino", "lobo", "tempo", "rio", "vento", "rosto", "mar", "cachorro", "tambor", "martelo", "campo", "menino"]
-let substantivos_Masculino_Plural = ["cacadores", "sinos", "lobos", "rios", "ventos", "rostos", "mares", "cachorros", "tambores", "martelos", "campos", "meninos"]
-let substantivos_Feminino = ["menina", "noticia", "lagrima", "vida", "porta", "floresta", "mae", "cidade"]
-let substantivos_Feminino_Plural = ["meninas", "noticias", "lagrimas", "portas", "florestas", "maes", "cidades"]
+let substantivo_Masculino = ["cacador", "sino", "lobo", "tempo", "rio", "vento", "rosto", "mar", "cachorro", "tambor", "martelo", "campo", "menino"]
+let substantivo_Masculino_Plural = ["cacadores", "sinos", "lobos", "rios", "ventos", "rostos", "mares", "cachorros", "tambores", "martelos", "campos", "meninos"]
+let substantivo_Feminino = ["menina", "noticia", "lagrima", "vida", "porta", "floresta", "mae", "cidade"]
+let substantivo_Feminino_Plural = ["meninas", "noticias", "lagrimas", "portas", "florestas", "maes", "cidades"]
 
-let verbos = ["correu", "corria", "corre", "bate", "batia", "bateu"]
-let verbos_Plural = ["correram", "correm", "corriam", "batiam", "batem", "bateram"]
+let verbo = ["correu", "corria", "corre", "bate", "batia", "bateu"]
+let verbo_Plural = ["correram", "correm", "corriam", "batiam", "batem", "bateram"]
 
 let preposicao_Com_Artigo = ["para", "com"]
 let preposicao_Masculino = ["pelo", "no"]
@@ -32,6 +32,12 @@ let preposicao_Feminino = ["pela", "na"]
 let preposicao_Masculino_Plural = ["pelos", "nos"]
 let preposicao_Feminino_Plural = ["pelas", "nas"]
 //--------------------END DATABASE-------------------------//
+
+var masculino = false
+var feminino = false
+var plural = false
+var com_artigo = false
+
 
 welcomeMessage()
 
