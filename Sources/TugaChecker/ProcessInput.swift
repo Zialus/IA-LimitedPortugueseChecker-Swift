@@ -227,7 +227,7 @@ func testSubstantivoAfterPreposicao(word: String) -> (Bool) {
 
 func checkGrammar(sentence: [String]) -> (Bool) {
 
-
+    // Artigo Section
 
     guard let firstWord = sentence[safe: 0] else {
         return false
@@ -240,8 +240,7 @@ func checkGrammar(sentence: [String]) -> (Bool) {
         return false
     }
 
-
-
+    // Substantivo Section
 
     guard let secondWord = sentence[safe: 1] else {
         return false
@@ -254,9 +253,7 @@ func checkGrammar(sentence: [String]) -> (Bool) {
         return false
     }
 
-
-
-
+    // Verbo Section
 
     guard let thirdWord = sentence[safe: 2] else {
         return false
@@ -269,12 +266,10 @@ func checkGrammar(sentence: [String]) -> (Bool) {
         return false
     }
 
-
-
-
+    // Preposicao Section
 
     guard let forthWord = sentence[safe: 3] else {
-        print("LOOOOL1")
+        printfulldebug("Doesn't have a forth word")
         return true
     }
 
@@ -285,13 +280,15 @@ func checkGrammar(sentence: [String]) -> (Bool) {
         return false
     }
 
-    // Code needs to bifurcate
+
+    // Code needs to bifurcate based on wether the "preposicao" allows for an "artigo" after it it or doesn't
 
     if artigo_preposicao {
 
+        // Artigo After Preposicao Section
 
         guard let fifthWord = sentence[safe: 4] else {
-            print("LOOOOL2")
+            printfulldebug("Doesn't have a 5th word")
             return true
         }
 
@@ -302,12 +299,10 @@ func checkGrammar(sentence: [String]) -> (Bool) {
             return false
         }
 
-
-
-
+        // Substantivo After Artigo After Preposicao Section
 
         guard let sixthWord = sentence[safe: 5] else {
-            print("LOOOOL3")
+            printfulldebug("Doesn't have a 6th word")
             return true
         }
 
@@ -321,8 +316,10 @@ func checkGrammar(sentence: [String]) -> (Bool) {
 
     } else {
 
+        // Substantivo After Preposicao Section
+
         guard let fifthWord = sentence[safe: 4] else {
-            print("LOOOOL77777")
+            printfulldebug("Doesn't have a 5th word")
             return true
         }
 
@@ -334,13 +331,7 @@ func checkGrammar(sentence: [String]) -> (Bool) {
         }
 
 
-
     }
-
-
-
-
-
 
     return true
 }

@@ -27,8 +27,8 @@ let verbo = ["correu", "corria", "corre", "bate", "batia", "bateu"]
 let verbo_Plural = ["correram", "correm", "corriam", "batiam", "batem", "bateram"]
 
 let preposicao_Com_Artigo = ["para", "com"]
-let preposicao_Masculino = ["pelo", "no"]
-let preposicao_Feminino = ["pela", "na"]
+let preposicao_Masculino = ["pelo", "no", "o"]
+let preposicao_Feminino = ["pela", "na", "a"]
 let preposicao_Masculino_Plural = ["pelos", "nos"]
 let preposicao_Feminino_Plural = ["pelas", "nas"]
 // --------------------END DATABASE------------------------- //
