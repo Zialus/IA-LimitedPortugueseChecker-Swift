@@ -7,7 +7,7 @@ func readInput() -> ([[String]]) {
 
     print("How many sentences do you want to test?")
 
-    if let userInput = readLine(stripNewline: true){
+    if let userInput = readLine(stripNewline: true) {
 
         guard let number = Int(userInput) else {
             print(ANSI.Red)
@@ -38,11 +38,11 @@ func readInput() -> ([[String]]) {
         }
 
 
-    } else{
+    } else {
         print("Something went horribily wrong")
         exit(1)
     }
-    
+
     return sentences
 
 
@@ -52,7 +52,7 @@ func readInput() -> ([[String]]) {
 
 func testSentences(sentenceList: [[String]]) -> () {
 
-    for (index,sentence) in sentenceList.enumerate(){
+    for (index, sentence) in sentenceList.enumerate() {
 
         print("Checking sentence \(index+1)...")
 
@@ -65,7 +65,7 @@ func testSentences(sentenceList: [[String]]) -> () {
         masculino_preposicao = false
         feminino_preposicao = false
         plural_preposicao = false
-        
+
         let bool = checkGrammar(sentence)
         switch bool {
         case true:
@@ -79,25 +79,25 @@ func testSentences(sentenceList: [[String]]) -> () {
 
 }
 
-func testArtigo(word: String)->(Bool){
+func testArtigo(word: String) -> (Bool) {
 
-    if artigo_Masculino_Maiusculo.contains(word){
+    if artigo_Masculino_Maiusculo.contains(word) {
         masculino_substantivo = true
         return true
     }
 
-    else if artigo_Masculino_Plural_Maiusculo.contains(word){
+    else if artigo_Masculino_Plural_Maiusculo.contains(word) {
         masculino_substantivo = true
         plural_substantivo = true
         return true
     }
 
-    else if artigo_Feminino_Maiusculo.contains(word){
+    else if artigo_Feminino_Maiusculo.contains(word) {
         feminino_substantivo = true
         return true
     }
 
-    else if artigo_Feminino_Plural_Maiusculo.contains(word){
+    else if artigo_Feminino_Plural_Maiusculo.contains(word) {
         feminino_substantivo = true
         plural_substantivo = true
         return true
@@ -106,64 +106,64 @@ func testArtigo(word: String)->(Bool){
     return false
 }
 
-func testSubstantivo(word: String)->(Bool){
+func testSubstantivo(word: String) -> (Bool) {
 
-    if substantivo_Masculino.contains(word){
+    if substantivo_Masculino.contains(word) {
         return masculino_substantivo == true && plural_substantivo == false
     }
 
-    else if substantivo_Masculino_Plural.contains(word){
+    else if substantivo_Masculino_Plural.contains(word) {
         return masculino_substantivo == true && plural_substantivo == true
     }
 
-    else if substantivo_Feminino.contains(word){
+    else if substantivo_Feminino.contains(word) {
         return feminino_substantivo == true && plural_substantivo == false
     }
 
-    else if substantivo_Feminino_Plural.contains(word){
+    else if substantivo_Feminino_Plural.contains(word) {
         return feminino_substantivo == true && plural_substantivo == true
     }
 
     return false
 }
 
-func testVerbo(word: String)->(Bool){
+func testVerbo(word: String) -> (Bool) {
 
-    if verbo.contains(word){
+    if verbo.contains(word) {
         return plural_substantivo == false
     }
 
-    else if verbo_Plural.contains(word){
+    else if verbo_Plural.contains(word) {
         return plural_substantivo == true
     }
 
     return false
 }
 
-func testPreposicao(word: String)->(Bool){
+func testPreposicao(word: String) -> (Bool) {
 
-    if preposicao_Com_Artigo.contains(word){
+    if preposicao_Com_Artigo.contains(word) {
         artigo_preposicao = true
         return true
     }
 
-    else if preposicao_Masculino.contains(word){
+    else if preposicao_Masculino.contains(word) {
         masculino_preposicao = true
         return true
     }
 
-    else if preposicao_Masculino_Plural.contains(word){
+    else if preposicao_Masculino_Plural.contains(word) {
         feminino_preposicao = true
         plural_preposicao = true
         return true
     }
 
-    else if preposicao_Feminino.contains(word){
+    else if preposicao_Feminino.contains(word) {
         feminino_preposicao = true
         return true
     }
 
-    else if preposicao_Feminino_Plural.contains(word){
+    else if preposicao_Feminino_Plural.contains(word) {
         feminino_preposicao = true
         plural_preposicao = true
         return true
@@ -174,53 +174,53 @@ func testPreposicao(word: String)->(Bool){
 }
 
 
-func testArtigoAfterPreposicao(word: String)->(Bool){
+func testArtigoAfterPreposicao(word: String) -> (Bool) {
 
-    if artigo_Masculino.contains(word){
+    if artigo_Masculino.contains(word) {
         masculino_preposicao = true
         return true
     }
 
-    else if artigo_Masculino_Plural.contains(word){
+    else if artigo_Masculino_Plural.contains(word) {
         masculino_preposicao = true
         plural_preposicao = true
         return true
     }
 
-    else if artigo_Feminino.contains(word){
+    else if artigo_Feminino.contains(word) {
         feminino_preposicao = true
         return true
     }
 
-    else if artigo_Feminino_Plural.contains(word){
+    else if artigo_Feminino_Plural.contains(word) {
         feminino_preposicao = true
         plural_preposicao = true
         return true
     }
-    
+
     return false
 
 }
 
 
-func testSubstantivoAfterPreposicao(word: String)->(Bool){
+func testSubstantivoAfterPreposicao(word: String) -> (Bool) {
 
-    if substantivo_Masculino.contains(word){
+    if substantivo_Masculino.contains(word) {
         return masculino_preposicao == true && plural_preposicao == false
     }
 
-    else if substantivo_Masculino_Plural.contains(word){
+    else if substantivo_Masculino_Plural.contains(word) {
         return masculino_preposicao == true && plural_preposicao == true
     }
 
-    else if substantivo_Feminino.contains(word){
+    else if substantivo_Feminino.contains(word) {
         return feminino_preposicao == true && plural_preposicao == false
     }
 
-    else if substantivo_Feminino_Plural.contains(word){
+    else if substantivo_Feminino_Plural.contains(word) {
         return feminino_preposicao == true && plural_preposicao == true
     }
-    
+
     return false
 }
 
@@ -235,7 +235,7 @@ func checkGrammar(sentence: [String]) -> (Bool) {
 
     let boolArtigo = testArtigo(firstWord)
 
-    if boolArtigo == false{
+    if boolArtigo == false {
         print("Something is wrong with the artigo: \(firstWord)")
         return false
     }
@@ -249,7 +249,7 @@ func checkGrammar(sentence: [String]) -> (Bool) {
 
     let boolSubstantivo = testSubstantivo(secondWord)
 
-    if boolSubstantivo == false{
+    if boolSubstantivo == false {
         print("Something is wrong with the substantivo: \(secondWord)")
         return false
     }
@@ -264,7 +264,7 @@ func checkGrammar(sentence: [String]) -> (Bool) {
 
     let boolVerbo = testVerbo(thirdWord)
 
-    if boolVerbo == false{
+    if boolVerbo == false {
         print("Something is wrong with the verbo: \(thirdWord)")
         return false
     }
@@ -280,13 +280,12 @@ func checkGrammar(sentence: [String]) -> (Bool) {
 
     let boolPreposicao = testPreposicao(forthWord)
 
-    if boolPreposicao == false{
+    if boolPreposicao == false {
         print("Something is wrong with the preposicao: \(forthWord)")
         return false
     }
 
-    // Code has to biforcate 
-
+    // Code needs to bifurcate
 
     if artigo_preposicao {
 
@@ -298,7 +297,7 @@ func checkGrammar(sentence: [String]) -> (Bool) {
 
         let boolArtigoAfterPreposicao = testArtigoAfterPreposicao(fifthWord)
 
-        if boolArtigoAfterPreposicao == false{
+        if boolArtigoAfterPreposicao == false {
             print("Something is wrong with the preposicao: \(fifthWord)")
             return false
         }
@@ -314,7 +313,7 @@ func checkGrammar(sentence: [String]) -> (Bool) {
 
         let boolSubstantivoAfterPreposicao = testSubstantivoAfterPreposicao(sixthWord)
 
-        if boolSubstantivoAfterPreposicao == false{
+        if boolSubstantivoAfterPreposicao == false {
             print("Something is wrong with the preposicao: \(sixthWord)")
             return false
         }
@@ -329,7 +328,7 @@ func checkGrammar(sentence: [String]) -> (Bool) {
 
         let boolSubstantivoAfterPreposicao = testSubstantivoAfterPreposicao(fifthWord)
 
-        if boolSubstantivoAfterPreposicao == false{
+        if boolSubstantivoAfterPreposicao == false {
             print("Something is wrong with the preposicao: \(fifthWord)")
             return false
         }

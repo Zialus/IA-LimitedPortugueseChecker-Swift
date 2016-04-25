@@ -7,7 +7,7 @@ var FULLDEBUG = false
 proccessCmdLineArgs()
 
 
-//--------------------START DATABASE-------------------------//
+// --------------------START DATABASE------------------------- //
 let artigo_Masculino_Maiusculo = ["O"]
 let artigo_Masculino_Plural_Maiusculo = ["Os"]
 let artigo_Masculino = ["o"]
@@ -31,7 +31,7 @@ let preposicao_Masculino = ["pelo", "no"]
 let preposicao_Feminino = ["pela", "na"]
 let preposicao_Masculino_Plural = ["pelos", "nos"]
 let preposicao_Feminino_Plural = ["pelas", "nas"]
-//--------------------END DATABASE-------------------------//
+// --------------------END DATABASE------------------------- //
 
 var masculino_substantivo = false
 var feminino_substantivo = false

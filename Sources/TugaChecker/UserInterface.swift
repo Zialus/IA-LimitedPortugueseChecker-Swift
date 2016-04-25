@@ -78,9 +78,9 @@ func proccessCmdLineArgs() -> () {
             print("Try launching with the argument \"--help\"")
             exit(1)
         }
-        
+
     }
-    
+
 }
 
 func goodbyeMessage() -> () {
