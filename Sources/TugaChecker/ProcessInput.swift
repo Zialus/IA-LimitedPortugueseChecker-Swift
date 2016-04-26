@@ -269,7 +269,8 @@ func checkGrammar(sentence: [String]) -> (Bool) {
     // Preposicao Section
 
     guard let forthWord = sentence[safe: 3] else {
-        printfulldebug("Doesn't have a forth word")
+        print("sent(frase_nominal(artigo('\(firstWord)'),substantivo('\(secondWord)')),frase_verbal(verbo('\(thirdWord)'))).")
+        printfulldebug("Doesn't have a 4th word")
         return true
     }
 
@@ -289,7 +290,7 @@ func checkGrammar(sentence: [String]) -> (Bool) {
 
         guard let fifthWord = sentence[safe: 4] else {
             printfulldebug("Doesn't have a 5th word")
-            return true
+            return false
         }
 
         let boolArtigoAfterPreposicao = testArtigoAfterPreposicao(fifthWord)
@@ -320,7 +321,7 @@ func checkGrammar(sentence: [String]) -> (Bool) {
 
         guard let fifthWord = sentence[safe: 4] else {
             printfulldebug("Doesn't have a 5th word")
-            return true
+            return false
         }
 
         let boolSubstantivoAfterPreposicao = testSubstantivoAfterPreposicao(fifthWord)
@@ -332,6 +333,21 @@ func checkGrammar(sentence: [String]) -> (Bool) {
 
 
     }
+
+    guard let fifthWord = sentence[safe: 4] else {
+        printfulldebug("Doesn't have a 5th word")
+        return false
+    }
+
+    guard let sixthWord = sentence[safe: 5] else {
+        printfulldebug("Doesn't have a 6th word")
+                    print("sent(frase_nominal(artigo('\(firstWord)'),substantivo('\(secondWord)'),frase_verbal(verbo('\(thirdWord)'),preposicao('\(forthWord)'),preposicao_artigo('\(fifthWord)'))).")
+        return true
+    }
+
+
+
+    print("sent(frase_nominal(artigo('\(firstWord)'),substantivo('\(secondWord)'),frase_verbal(verbo('\(thirdWord)'),preposicao('\(forthWord)'),preposicao_artigo('\(fifthWord)'),preposicao_substantivo('\(sixthWord)'))).")
 
     return true
 }
