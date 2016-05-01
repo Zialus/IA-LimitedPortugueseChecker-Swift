@@ -6,7 +6,6 @@ var FULLDEBUG = false
 
 proccessCmdLineArgs()
 
-
 // --------------------START DATABASE------------------------- //
 let artigo_Masculino_Maiusculo = ["O"]
 let artigo_Masculino_Plural_Maiusculo = ["Os"]
@@ -33,6 +32,8 @@ let preposicao_Masculino_Plural = ["pelos", "nos"]
 let preposicao_Feminino_Plural = ["pelas", "nas"]
 // --------------------END DATABASE------------------------- //
 
+
+// Global Variables to be used while checking the grammar //
 var masculino_substantivo = false
 var feminino_substantivo = false
 var plural_substantivo = false
@@ -42,13 +43,12 @@ var artigo_preposicao = false
 var masculino_preposicao = false
 var feminino_preposicao = false
 var plural_preposicao = false
+// Very Hacky I know...but it is what it is... //
 
 welcomeMessage()
 
 let sentenceList = readInput()
-
 printdebug("\n\(Colors.Yellow("List of sentences:")) \(sentenceList)\n")
-
 testSentences(sentenceList)
 
 goodbyeMessage()

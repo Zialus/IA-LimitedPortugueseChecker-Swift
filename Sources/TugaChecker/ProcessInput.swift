@@ -1,6 +1,5 @@
 import Foundation
 
-
 func readInput() -> ([[String]]) {
 
     var sentences = [[String]]()
@@ -11,21 +10,19 @@ func readInput() -> ([[String]]) {
 
         guard let number = Int(userInput) else {
             print(ANSI.Red)
-            print("That's not a valid number!!!!!")
+            print("That's not a valid number!!!!! It's not even an Int really...")
             exit(1)
         }
 
         if number < 1 {
             print(ANSI.Red)
-            print("That's not a valid number!!!!!")
+            print("That's not a valid number!!!!! Pick a number greater than 0.")
             exit(1)
         }
 
         printfulldebug("\nI received the number: \(number)\n")
 
-
         for i in 1...number {
-
             print("Enter sentence number \(i): ")
 
             if let userInput = readLine(stripNewline: true) {
@@ -35,8 +32,8 @@ func readInput() -> ([[String]]) {
                 let words = userInput.componentsSeparatedByString(delimiter)
                 sentences.append(words)
             }
-        }
 
+        }
 
     } else {
         print("Something went horribily wrong")
@@ -44,9 +41,6 @@ func readInput() -> ([[String]]) {
     }
 
     return sentences
-
-
-
 
 }
 
@@ -58,6 +52,7 @@ func testSentences(sentenceList: [[String]]) -> () {
 
         printfulldebug("\(Colors.Yellow("Contents of the sentece:"))   \(sentence)")
 
+        // Set all the global variables to false
         masculino_substantivo = false
         feminino_substantivo = false
         plural_substantivo = false
@@ -169,10 +164,8 @@ func testPreposicao(word: String) -> (Bool) {
         return true
     }
 
-
     return false
 }
-
 
 func testArtigoAfterPreposicao(word: String) -> (Bool) {
 
@@ -202,7 +195,6 @@ func testArtigoAfterPreposicao(word: String) -> (Bool) {
 
 }
 
-
 func testSubstantivoAfterPreposicao(word: String) -> (Bool) {
 
     if substantivo_Masculino.contains(word) {
@@ -223,7 +215,6 @@ func testSubstantivoAfterPreposicao(word: String) -> (Bool) {
 
     return false
 }
-
 
 func checkGrammar(sentence: [String]) -> (Bool) {
 
@@ -334,20 +325,23 @@ func checkGrammar(sentence: [String]) -> (Bool) {
 
     }
 
+    // Final length checks to decide how many words the sentenses have before being printed
+
     guard let fifthWord = sentence[safe: 4] else {
+        // Sentenses with 4 words are never valid in this particular grammar
         printfulldebug("Doesn't have a 5th word")
         return false
     }
 
     guard let sixthWord = sentence[safe: 5] else {
+        // If the code got this far the sentense has 5 words but not 6 and can be printed
         printfulldebug("Doesn't have a 6th word")
-                    print("sent(frase_nominal(artigo('\(firstWord)'),substantivo('\(secondWord)'),frase_verbal(verbo('\(thirdWord)'),preposicao('\(forthWord)'),preposicao_artigo('\(fifthWord)'))).")
+        print("sent(frase_nominal(artigo('\(firstWord)'),substantivo('\(secondWord)'),frase_verbal(verbo('\(thirdWord)'),preposicao('\(forthWord)'),preposicao_artigo('\(fifthWord)'))).")
         return true
     }
-
-
-
+    
+    // If I got this far the sentense has 6 words and can be printed
     print("sent(frase_nominal(artigo('\(firstWord)'),substantivo('\(secondWord)'),frase_verbal(verbo('\(thirdWord)'),preposicao('\(forthWord)'),preposicao_artigo('\(fifthWord)'),preposicao_substantivo('\(sixthWord)'))).")
-
+    
     return true
 }

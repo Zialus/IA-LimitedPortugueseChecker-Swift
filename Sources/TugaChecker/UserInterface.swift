@@ -1,6 +1,6 @@
 import Foundation
 
-func printInstructions() {
+func printInstructions() -> () {
     print(ANSI.Yellow)
     print("  .-----------------------------------------------------------------.")
     print(" /  .-.                                                         .-.  \\")
@@ -16,7 +16,7 @@ func printInstructions() {
     print()
 }
 
-func welcomeMessage() {
+func welcomeMessage() -> () {
     print(ANSI.Blue)
     print("  _____ _     _       _         _           _                            _")
     print(" |_   _| |__ (_)___  (_)___    (_)_   _ ___| |_    __ _   _   _ ___  ___| | ___  ___ ___")
@@ -83,5 +83,5 @@ func goodbyeMessage() -> () {
     print()
     print("It was a pleasure working with you!")
     print()
-
+    
 }
