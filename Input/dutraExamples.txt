@@ -1,4 +1,4 @@
-26
+28
 A menina corre para a floresta
 A menina corre para a mae
 A vida corre
@@ -12,9 +12,11 @@ A porta bateu
 O vento bateu a porta
 A menina bateu na porta
 O martelo bateu na porta
+A menina bateu no cachorro
 A menina bateu no tambor
 Os tambores bateram
 O sino bateu
+A menina corre
 A vida correu
 A noticia correu para a floresta
 A vida correu com os lobos
