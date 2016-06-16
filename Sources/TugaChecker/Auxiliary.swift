@@ -1,20 +1,20 @@
 import Foundation
 
-func printdebug(string: Any) -> () {
+func printdebug(_ string: Any) -> () {
     if DEBUG == true {
         print(string)
     }
 }
 
-func printfulldebug(string: Any) -> () {
+func printfulldebug(_ string: Any) -> () {
     if FULLDEBUG == true {
         print(string)
     }
 }
 
-extension CollectionType {
+extension Array {
     // Returns the element at the specified index iff it is within bounds, otherwise nil.
-    subscript(safe index: Index) -> Generator.Element? {
+    subscript(safe index: Index) -> Iterator.Element? {
         return indices.contains(index) ? self[index] : nil
     }
 }

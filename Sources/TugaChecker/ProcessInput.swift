@@ -6,7 +6,7 @@ func readInput() -> ([[String]]) {
 
     print("How many sentences do you want to test?")
 
-    if let userInput = readLine(stripNewline: true) {
+    if let userInput = readLine(strippingNewline: true) {
 
         guard let number = Int(userInput) else {
             print(ANSI.Red)
@@ -25,11 +25,11 @@ func readInput() -> ([[String]]) {
         for i in 1...number {
             print("Enter sentence number \(i): ")
 
-            if let userInput = readLine(stripNewline: true) {
+            if let userInput = readLine(strippingNewline: true) {
 
                 let delimiter = " "
 
-                let words = userInput.componentsSeparatedByString(delimiter)
+                let words = userInput.components(separatedBy: delimiter)
                 sentences.append(words)
             }
 
@@ -44,9 +44,9 @@ func readInput() -> ([[String]]) {
 
 }
 
-func testSentences(sentenceList: [[String]]) -> () {
+func testSentences(_ sentenceList: [[String]]) -> () {
 
-    for (index, sentence) in sentenceList.enumerate() {
+    for (index, sentence) in sentenceList.enumerated() {
 
         print("Checking sentence \(index+1)...")
 
@@ -74,7 +74,7 @@ func testSentences(sentenceList: [[String]]) -> () {
 
 }
 
-func testArtigo(word: String) -> (Bool) {
+func testArtigo(_ word: String) -> (Bool) {
 
     if artigo_Masculino_Maiusculo.contains(word) {
         masculino_substantivo = true
@@ -101,7 +101,7 @@ func testArtigo(word: String) -> (Bool) {
     return false
 }
 
-func testSubstantivo(word: String) -> (Bool) {
+func testSubstantivo(_ word: String) -> (Bool) {
 
     if substantivo_Masculino.contains(word) {
         return masculino_substantivo == true && plural_substantivo == false
@@ -122,7 +122,7 @@ func testSubstantivo(word: String) -> (Bool) {
     return false
 }
 
-func testVerbo(word: String) -> (Bool) {
+func testVerbo(_ word: String) -> (Bool) {
 
     if verbo.contains(word) {
         return plural_substantivo == false
@@ -135,7 +135,7 @@ func testVerbo(word: String) -> (Bool) {
     return false
 }
 
-func testPreposicao(word: String) -> (Bool) {
+func testPreposicao(_ word: String) -> (Bool) {
 
     if preposicao_Com_Artigo.contains(word) {
         artigo_preposicao = true
@@ -167,7 +167,7 @@ func testPreposicao(word: String) -> (Bool) {
     return false
 }
 
-func testArtigoAfterPreposicao(word: String) -> (Bool) {
+func testArtigoAfterPreposicao(_ word: String) -> (Bool) {
 
     if artigo_Masculino.contains(word) {
         masculino_preposicao = true
@@ -195,7 +195,7 @@ func testArtigoAfterPreposicao(word: String) -> (Bool) {
 
 }
 
-func testSubstantivoAfterPreposicao(word: String) -> (Bool) {
+func testSubstantivoAfterPreposicao(_ word: String) -> (Bool) {
 
     if substantivo_Masculino.contains(word) {
         return masculino_preposicao == true && plural_preposicao == false
@@ -216,7 +216,7 @@ func testSubstantivoAfterPreposicao(word: String) -> (Bool) {
     return false
 }
 
-func checkGrammar(sentence: [String]) -> (Bool) {
+func checkGrammar(_ sentence: [String]) -> (Bool) {
 
     // Artigo Section
 
