@@ -41,17 +41,17 @@ func welcomeMessage() -> () {
 
 func proccessCmdLineArgs() -> () {
 
-    if Process.arguments.count == 1 {
+    if CommandLine.arguments.count == 1 {
         print("All debug functionality is turned \(Colors.Red("OFF"))!")
         print()
-    } else if Process.arguments.count > 2 {
+    } else if CommandLine.arguments.count > 2 {
         print()
         print("\(Colors.Red("Too many arguments!")) Try launching with the argument \"--help\" ")
         print()
         exit(1)
-    } else if Process.arguments.count == 2 {
+    } else if CommandLine.arguments.count == 2 {
 
-        let onlyArg = Process.arguments[1]
+        let onlyArg = CommandLine.arguments[1]
 
         switch onlyArg {
         case "debug":
