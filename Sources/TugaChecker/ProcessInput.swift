@@ -339,9 +339,9 @@ func checkGrammar(_ sentence: [String]) -> (Bool) {
         print("sent(frase_nominal(artigo('\(firstWord)'),substantivo('\(secondWord)'),frase_verbal(verbo('\(thirdWord)'),preposicao('\(forthWord)'),preposicao_artigo('\(fifthWord)'))).")
         return true
     }
-    
+
     // If I got this far the sentense has 6 words and can be printed
     print("sent(frase_nominal(artigo('\(firstWord)'),substantivo('\(secondWord)'),frase_verbal(verbo('\(thirdWord)'),preposicao('\(forthWord)'),preposicao_artigo('\(fifthWord)'),preposicao_substantivo('\(sixthWord)'))).")
-    
+
     return true
 }
