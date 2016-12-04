@@ -1,4 +1,5 @@
 import Foundation
+import Rainbow
 
 // Store debug information that will be given by cmdLine Args
 var DEBUG = false
@@ -48,7 +49,7 @@ var plural_preposicao = false
 welcomeMessage()
 
 let sentenceList = readInput()
-printdebug("\n\(Colors.Yellow("List of sentences:")) \(sentenceList)\n")
+printdebug("\nList of sentences:".lightYellow + " \(sentenceList)\n")
 testSentences(sentenceList)
 
 goodbyeMessage()

@@ -9,13 +9,13 @@ func readInput() -> ([[String]]) {
     if let userInput = readLine(strippingNewline: true) {
 
         guard let number = Int(userInput) else {
-            print(ANSI.Red)
+            print(ANSI.red)
             print("That's not a valid number!!!!! It's not even an Int really...")
             exit(1)
         }
 
         if number < 1 {
-            print(ANSI.Red)
+            print(ANSI.red)
             print("That's not a valid number!!!!! Pick a number greater than 0.")
             exit(1)
         }
@@ -50,7 +50,7 @@ func testSentences(_ sentenceList: [[String]]) -> () {
 
         print("Checking sentence \(index+1)...")
 
-        printfulldebug("\(Colors.Yellow("Contents of the sentece:"))   \(sentence)")
+        printfulldebug("Contents of the sentece:".lightYellow + "   \(sentence)")
 
         // Set all the global variables to false
         masculino_substantivo = false
@@ -64,9 +64,9 @@ func testSentences(_ sentenceList: [[String]]) -> () {
         let bool = checkGrammar(sentence)
         switch bool {
         case true:
-            print("\(Colors.Green("Valid sentence"))")
+            print("Valid sentence".lightGreen)
         case false:
-            print("\(Colors.Red("Invalid sentence"))")
+            print("Invalid sentence".red)
         }
         print()
 

@@ -1,10 +1,10 @@
 import Foundation
 
 func printInstructions() -> () {
-    print(ANSI.Yellow)
+    print(ANSI.yellow)
     print("  .-----------------------------------------------------------------.")
     print(" /  .-.                                                         .-.  \\")
-    print("|  /   \\           \(ANSI.Cyan)./TugaCheker\(ANSI.Yellow) <Debug Mode>                   /   \\  |")
+    print("|  /   \\           \(ANSI.cyan)./TugaCheker\(ANSI.yellow) <Debug Mode>                   /   \\  |")
     print("| |\\_.  |                                                     |    /| |")
     print("|\\|  | /|      debug:     Activates basic debug info          |\\  | |/|")
     print("| `---' |      fulldebug: Activates the full debug info       | `---' |")
@@ -17,7 +17,7 @@ func printInstructions() -> () {
 }
 
 func welcomeMessage() -> () {
-    print(ANSI.Blue)
+    print(ANSI.blue)
     print("  _____ _     _       _         _           _                            _")
     print(" |_   _| |__ (_)___  (_)___    (_)_   _ ___| |_    __ _   _   _ ___  ___| | ___  ___ ___")
     print("   | | | '_ \\| / __| | / __|   | | | | / __| __|  / _` | | | | / __|/ _ \\ |/ _ \\/ __/ __|")
@@ -36,17 +36,17 @@ func welcomeMessage() -> () {
     print("  | |_| | | | (_| | | | | | | | | | | | (_| | |    | |___| | | |  __/ (__|   <  __/ |")
     print("   \\____|_|  \\__,_|_| |_| |_|_| |_| |_|\\__,_|_|     \\____|_| |_|\\___|\\___|_|\\_\\___|_|")
 
-    print(ANSI.Reset)
+    print(ANSI.reset)
 }
 
 func proccessCmdLineArgs() -> () {
 
     if CommandLine.arguments.count == 1 {
-        print("All debug functionality is turned \(Colors.Red("OFF"))!")
+        print("All debug functionality is turned " + "OFF".red + "!")
         print()
     } else if CommandLine.arguments.count > 2 {
         print()
-        print("\(Colors.Red("Too many arguments!")) Try launching with the argument \"--help\" ")
+        print("Too many arguments!".red + " Try launching with the argument \"--help\" ")
         print()
         exit(1)
     } else if CommandLine.arguments.count == 2 {
@@ -55,12 +55,12 @@ func proccessCmdLineArgs() -> () {
 
         switch onlyArg {
         case "debug":
-            print("Debug Mode is \(Colors.Green("ON"))!")
+            print("Debug Mode is " + "ON".lightGreen + "!")
             print()
 
             DEBUG=true
         case "fulldebug":
-            print("Full Debug mode is \(Colors.Green("ON"))!!!")
+            print("Full Debug mode is " + "ON".lightGreen + "!!!")
             print()
 
             DEBUG=true
@@ -69,7 +69,7 @@ func proccessCmdLineArgs() -> () {
             printInstructions()
             exit(0)
         default:
-            print("\(Colors.Red("What are you trying to do!?")) \n\"\(onlyArg)\" is an unrecognized argument")
+            print("What are you trying to do!?".red + "\n\"\(onlyArg)\" is an unrecognized argument")
             print("Try launching with the argument \"--help\"")
             exit(1)
         }
