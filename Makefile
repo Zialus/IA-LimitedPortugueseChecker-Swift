@@ -5,7 +5,7 @@ all:
 	mv ./.build/release/TugaChecker .
 
 clean:
-	swift build --clean
+	swift package clean
 	if [ -f ./TugaChecker ]; then rm ./TugaChecker; fi
 
 test:
