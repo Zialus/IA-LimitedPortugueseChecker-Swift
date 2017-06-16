@@ -9,14 +9,12 @@ func readInput() -> ([[String]]) {
     if let userInput = readLine(strippingNewline: true) {
 
         guard let number = Int(userInput) else {
-            print(ANSI.red)
-            print("That's not a valid number!!!!! It's not even an Int really...")
+            print("That's not a valid number!!!!! You must input an integer.".red)
             exit(1)
         }
 
         if number < 1 {
-            print(ANSI.red)
-            print("That's not a valid number!!!!! Pick a number greater than 0.")
+            print("That's not a valid number!!!!! Pick a number greater than 0.".red)
             exit(1)
         }
 
