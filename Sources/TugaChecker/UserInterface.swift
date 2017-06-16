@@ -1,6 +1,6 @@
 import Foundation
 
-func printInstructions() -> () {
+func printInstructions() {
     print(ANSI.yellow)
     print("  .-----------------------------------------------------------------.")
     print(" /  .-.                                                         .-.  \\")
@@ -39,7 +39,7 @@ func welcomeMessage() -> () {
     print(ANSI.reset)
 }
 
-func proccessCmdLineArgs() -> () {
+func proccessCmdLineArgs() {
 
     if CommandLine.arguments.count == 1 {
         print("All debug functionality is turned " + "OFF".red + "!")
@@ -78,7 +78,7 @@ func proccessCmdLineArgs() -> () {
 
 }
 
-func goodbyeMessage() -> () {
+func goodbyeMessage() {
 
     print()
     print("It was a pleasure working with you!")
