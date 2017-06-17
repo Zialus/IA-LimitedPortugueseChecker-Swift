@@ -57,9 +57,8 @@ func proccessCmdLineArgs() {
         print("All debug functionality is turned " + "OFF".red + "!")
         print()
     } else if CommandLine.arguments.count > 2 {
-        print()
-        print("Too many arguments!".red + " Try launching with the argument \"--help\" ")
-        print()
+        print("Too many arguments!".red)
+        print("Try launching with the argument " + "\"--help\".".yellow)
         exit(1)
     } else if CommandLine.arguments.count == 2 {
 
@@ -67,13 +66,11 @@ func proccessCmdLineArgs() {
 
         switch onlyArg {
         case "debug":
-            print("Debug Mode is " + "ON".lightGreen + "!")
-            print()
+            print("Debug Mode is " + "ON".lightGreen + "!\n")
 
             DEBUG=true
         case "fulldebug":
-            print("Full Debug mode is " + "ON".lightGreen + "!!!")
-            print()
+            print("Full Debug mode is " + "ON".lightGreen + "!!!\n")
 
             DEBUG=true
             FULLDEBUG=true
@@ -81,8 +78,8 @@ func proccessCmdLineArgs() {
             printInstructions()
             exit(0)
         default:
-            print("What are you trying to do!?".red + "\n\"\(onlyArg)\" is an unrecognized argument")
-            print("Try launching with the argument \"--help\"")
+            print("What are you trying to do?!".red + " \"\(onlyArg)\" " + "is an unrecognized argument.".red)
+            print("Try launching with the argument " + "\"--help\".".yellow)
             exit(1)
         }
 
