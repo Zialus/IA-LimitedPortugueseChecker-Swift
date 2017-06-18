@@ -1,12 +1,13 @@
 DEBUGMODE = fulldebug
+EXEC = TugaChecker
 
 all:
-	swift build -Xswiftc -O -c release
-	mv ./.build/release/TugaChecker .
+	swift build -Xswiftc -O -Xswiftc -wmo -c release
+	cp ./.build/release/$(EXEC) .
 
 clean:
 	swift package clean
-	if [ -f ./TugaChecker ]; then rm ./TugaChecker; fi
+	if [ -f ./$(EXEC) ]; then rm ./$(EXEC); fi
 
 test:
-	./TugaChecker $(DEBUGMODE) < ./Input/dutraExamples.txt
+	./$(EXEC) $(DEBUGMODE) < ./Input/dutraExamples.txt
