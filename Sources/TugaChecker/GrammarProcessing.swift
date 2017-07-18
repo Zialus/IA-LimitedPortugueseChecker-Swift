@@ -1,5 +1,16 @@
 import Foundation
 
+func setEverythingtoFalse() {
+    // Set all the global variables to false
+    masculino_substantivo = false
+    feminino_substantivo = false
+    plural_substantivo = false
+    artigo_preposicao = false
+    masculino_preposicao = false
+    feminino_preposicao = false
+    plural_preposicao = false
+}
+
 func testSentences(_ sentenceList: [[String]]) {
 
     for (index, sentence) in sentenceList.enumerated() {
@@ -8,14 +19,7 @@ func testSentences(_ sentenceList: [[String]]) {
 
         printfulldebug("Contents of the sentece:".lightYellow + "   \(sentence)")
 
-        // Set all the global variables to false
-        masculino_substantivo = false
-        feminino_substantivo = false
-        plural_substantivo = false
-        artigo_preposicao = false
-        masculino_preposicao = false
-        feminino_preposicao = false
-        plural_preposicao = false
+        setEverythingtoFalse()
 
         let bool = checkGrammar(sentence)
         switch bool {
