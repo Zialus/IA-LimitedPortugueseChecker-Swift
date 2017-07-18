@@ -1,48 +1,5 @@
 import Foundation
 
-func readInput() -> ([[String]]) {
-
-    var sentences = [[String]]()
-
-    print("How many sentences do you want to test?")
-
-    if let userInput = readLine(strippingNewline: true) {
-
-        guard let number = Int(userInput) else {
-            print("That's not a valid number!!!!! You must input an integer.".red)
-            exit(1)
-        }
-
-        if number < 1 {
-            print("That's not a valid number!!!!! Pick a number greater than 0.".red)
-            exit(1)
-        }
-
-        printfulldebug("\nI received the number: \(number)\n")
-
-        for i in 1...number {
-            print("Enter sentence number \(i): ")
-
-            if let sentence = readLine(strippingNewline: true) {
-
-                let delimiter = " "
-                let words = sentence.components(separatedBy: delimiter)
-                sentences.append(words)
-
-            } else {
-                print("Couldn't read sentence".red)
-            }
-        }
-
-    } else {
-        print("Something went horribily wrong while reading your input".red)
-        exit(1)
-    }
-
-    return sentences
-
-}
-
 func testSentences(_ sentenceList: [[String]]) -> () {
 
     for (index, sentence) in sentenceList.enumerated() {
