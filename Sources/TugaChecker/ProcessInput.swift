@@ -23,18 +23,19 @@ func readInput() -> ([[String]]) {
         for i in 1...number {
             print("Enter sentence number \(i): ")
 
-            if let userInput = readLine(strippingNewline: true) {
+            if let sentence = readLine(strippingNewline: true) {
 
                 let delimiter = " "
-
-                let words = userInput.components(separatedBy: delimiter)
+                let words = sentence.components(separatedBy: delimiter)
                 sentences.append(words)
-            }
 
+            } else {
+                print("Couldn't read sentence".red)
+            }
         }
 
     } else {
-        print("Something went horribily wrong")
+        print("Something went horribily wrong while reading your input".red)
         exit(1)
     }
 
