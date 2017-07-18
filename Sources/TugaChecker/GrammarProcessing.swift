@@ -184,9 +184,7 @@ func checkGrammar(_ sentence: [String]) -> Bool {
         return false
     }
 
-    let boolArtigo = testArtigo(firstWord)
-
-    if boolArtigo == false {
+    if testArtigo(firstWord) == false {
         print("Something is wrong with the artigo: \(firstWord)")
         return false
     }
@@ -197,9 +195,7 @@ func checkGrammar(_ sentence: [String]) -> Bool {
         return false
     }
 
-    let boolSubstantivo = testSubstantivo(secondWord)
-
-    if boolSubstantivo == false {
+    if testSubstantivo(secondWord) == false {
         print("Something is wrong with the substantivo: \(secondWord)")
         return false
     }
@@ -210,9 +206,7 @@ func checkGrammar(_ sentence: [String]) -> Bool {
         return false
     }
 
-    let boolVerbo = testVerbo(thirdWord)
-
-    if boolVerbo == false {
+    if testVerbo(thirdWord) == false {
         print("Something is wrong with the verbo: \(thirdWord)")
         return false
     }
@@ -225,9 +219,7 @@ func checkGrammar(_ sentence: [String]) -> Bool {
         return true
     }
 
-    let boolPreposicao = testPreposicao(forthWord)
-
-    if boolPreposicao == false {
+    if testPreposicao(forthWord) == false {
         print("Something is wrong with the preposicao: \(forthWord)")
         return false
     }
@@ -244,9 +236,7 @@ func checkGrammar(_ sentence: [String]) -> Bool {
             return false
         }
 
-        let boolArtigoAfterPreposicao = testArtigoAfterPreposicao(fifthWord)
-
-        if boolArtigoAfterPreposicao == false {
+        if testArtigoAfterPreposicao(fifthWord) == false {
             print("Something is wrong with the preposicao: \(fifthWord)")
             return false
         }
@@ -258,9 +248,7 @@ func checkGrammar(_ sentence: [String]) -> Bool {
             return true
         }
 
-        let boolSubstantivoAfterPreposicao = testSubstantivoAfterPreposicao(sixthWord)
-
-        if boolSubstantivoAfterPreposicao == false {
+        if testSubstantivoAfterPreposicao(sixthWord) == false {
             print("Something is wrong with the preposicao: \(sixthWord)")
             return false
         }
@@ -275,9 +263,7 @@ func checkGrammar(_ sentence: [String]) -> Bool {
             return false
         }
 
-        let boolSubstantivoAfterPreposicao = testSubstantivoAfterPreposicao(fifthWord)
-
-        if boolSubstantivoAfterPreposicao == false {
+        if testSubstantivoAfterPreposicao(fifthWord) == false {
             print("Something is wrong with the preposicao: \(fifthWord)")
             return false
         }
