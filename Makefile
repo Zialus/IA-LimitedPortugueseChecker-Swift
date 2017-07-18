@@ -9,5 +9,7 @@ clean:
 	swift package clean
 	if [ -f ./$(EXEC) ]; then rm ./$(EXEC); fi
 
-test:
-	./$(EXEC) $(DEBUGMODE) < ./Input/dutraExamples.txt
+test: dutra_examples
+
+dutra_examples:
+	time ./$(EXEC) $(DEBUGMODE) < ./Input/dutraExamples.txt
