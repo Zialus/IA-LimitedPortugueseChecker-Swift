@@ -12,4 +12,4 @@ clean:
 test: dutra_examples
 
 dutra_examples:
-	time ./$(EXEC) $(DEBUGMODE) < ./Input/dutraExamples.txt
+	time ./$(EXEC) $(DEBUGMODE) < Input/dutraExamples.txt
