@@ -10,5 +10,5 @@ Artificial Intelligence Class Project
 [swift-url]: https://swift.org
 [platform-badge]: https://img.shields.io/badge/Platforms-OS%20X%20--%20Linux-lightgray.svg?style=flat
 [platform-url]: https://swift.org
-[travis-badge]: https://travis-ci.org/Zialus/IA-LimitedPortugueseChecke-Swift.svg?branch=master
-[travis-url]: https://travis-ci.org/Zialus/IA-LimitedPortugueseChecke-Swift
+[travis-badge]: https://travis-ci.org/Zialus/IA-LimitedPortugueseChecker-Swift.svg?branch=master
+[travis-url]: https://travis-ci.org/Zialus/IA-LimitedPortugueseChecker-Swift
