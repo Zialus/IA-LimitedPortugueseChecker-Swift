@@ -264,14 +264,23 @@ func checkGrammar(_ sentence: [String]) -> Bool {
         }
 
         if testSubstantivoAfterPreposicao(fifthWord) == false {
-            print("Something is wrong with the preposicao: \(fifthWord)")
+            print("Something is wrong with the substantivo: \(fifthWord)")
             return false
         }
 
-
+        if let sixthWord = sentence[safe: 5] {
+            printfulldebug("Found word at position 6: \(sixthWord). But can't have more than 5 words if the 5th word is a substantivo")
+            return false
+        }
     }
 
-    // Final length checks to decide how many words the sentenses have before being printed
+    // Final length checks to decide how many words the sentences have before being printed
+
+    if let seventhWord = sentence[safe: 6] {
+        // Sentences with more than 6 words are never valid in this particular grammar
+        printfulldebug("Found word at position 7: \(seventhWord). But can't have more than 6 words")
+        return false
+    }
 
     guard let fifthWord = sentence[safe: 4] else {
         // Sentenses with 4 words are never valid in this particular grammar
@@ -280,13 +289,13 @@ func checkGrammar(_ sentence: [String]) -> Bool {
     }
 
     guard let sixthWord = sentence[safe: 5] else {
-        // If the code got this far the sentense has 5 words but not 6 and can be printed
+        // If the code got this far, the sentense has 5 words(all valid) but not a 6th one, and can be printed
         printfulldebug("Doesn't have a 6th word")
-        print("sent(frase_nominal(artigo('\(firstWord)'),substantivo('\(secondWord)'),frase_verbal(verbo('\(thirdWord)'),preposicao('\(forthWord)'),preposicao_artigo('\(fifthWord)'))).")
+        print("sent(frase_nominal(artigo('\(firstWord)'),substantivo('\(secondWord)'),frase_verbal(verbo('\(thirdWord)'),preposicao('\(forthWord)'),preposicao_substantivo('\(fifthWord)'))).")
         return true
     }
 
-    // If I got this far the sentense has 6 words and can be printed
+    // If the code got this far, the sentense has 6 words(all valid) and can be printed
     print("sent(frase_nominal(artigo('\(firstWord)'),substantivo('\(secondWord)'),frase_verbal(verbo('\(thirdWord)'),preposicao('\(forthWord)'),preposicao_artigo('\(fifthWord)'),preposicao_substantivo('\(sixthWord)'))).")
 
     return true
