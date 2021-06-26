@@ -1,4 +1,4 @@
-// swift-tools-version:5.3
+// swift-tools-version:5.4
 
 import PackageDescription
 
@@ -8,7 +8,7 @@ let package = Package(
         .package(url: "https://github.com/onevcat/Rainbow.git", from: "4.0.0")
     ],
     targets: [
-        .target(
+        .executableTarget(
             name: "TugaChecker",
             dependencies: ["Rainbow"]
         )
