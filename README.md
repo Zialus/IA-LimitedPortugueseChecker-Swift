@@ -8,10 +8,10 @@ Artificial Intelligence Class Project
 
 [![Quality Gate Status][sonar-badge]][sonar-url]
 
-[swift-badge]: https://img.shields.io/badge/Swift-5.10-orange.svg?style=flat
+[swift-badge]: https://img.shields.io/badge/Swift-6.1-orange.svg?style=flat
 [swift-url]: https://swift.org
 
-[platform-badge]: https://img.shields.io/badge/Platforms-OS%20X%20--%20Linux-blue.svg?style=flat
+[platform-badge]: https://img.shields.io/badge/Platforms-macOS%20--%20Linux-blue.svg?style=flat
 [platform-url]: https://swift.org
 
 [gha-badge]: https://github.com/Zialus/IA-LimitedPortugueseChecker-Swift/actions/workflows/swift.yml/badge.svg

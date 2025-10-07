@@ -51,7 +51,7 @@ func welcomeMessage() {
     print(welcomeMessage)
 }
 
-func proccessCmdLineArgs() {
+@MainActor func proccessCmdLineArgs() {
 
     if CommandLine.arguments.count == 1 {
         print("All debug functionality is turned " + "OFF".red + "!")
@@ -93,7 +93,7 @@ func goodbyeMessage() {
 
 }
 
-func readInput() -> ([[String]]) {
+@MainActor func readInput() -> ([[String]]) {
 
     var sentences = [[String]]()
 
@@ -111,7 +111,7 @@ func readInput() -> ([[String]]) {
             exit(1)
         }
 
-        printfulldebug("\nI received the number: \(number)\n")
+    printfulldebug("\nI received the number: \(number)\n")
 
         for i in 1...number {
             print("Enter sentence number \(i): ")

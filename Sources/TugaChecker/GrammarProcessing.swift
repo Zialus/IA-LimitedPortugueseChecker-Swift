@@ -1,6 +1,6 @@
 import Foundation
 
-func setEverythingtoFalse() {
+@MainActor func setEverythingtoFalse() {
     // Set all the global variables to false
     masculino_substantivo = false
     feminino_substantivo = false
@@ -11,7 +11,7 @@ func setEverythingtoFalse() {
     plural_preposicao = false
 }
 
-func testSentences(_ sentenceList: [[String]]) {
+@MainActor func testSentences(_ sentenceList: [[String]]) {
 
     for (index, sentence) in sentenceList.enumerated() {
 
@@ -34,7 +34,7 @@ func testSentences(_ sentenceList: [[String]]) {
 
 }
 
-func testArtigo(_ word: String) -> Bool {
+@MainActor func testArtigo(_ word: String) -> Bool {
 
     if artigo_Masculino_Maiusculo.contains(word) {
         masculino_substantivo = true
@@ -61,7 +61,7 @@ func testArtigo(_ word: String) -> Bool {
     return false
 }
 
-func testSubstantivo(_ word: String) -> Bool {
+@MainActor func testSubstantivo(_ word: String) -> Bool {
 
     if substantivo_Masculino.contains(word) {
         return masculino_substantivo == true && plural_substantivo == false
@@ -82,7 +82,7 @@ func testSubstantivo(_ word: String) -> Bool {
     return false
 }
 
-func testVerbo(_ word: String) -> Bool {
+@MainActor func testVerbo(_ word: String) -> Bool {
 
     if verbo.contains(word) {
         return plural_substantivo == false
@@ -95,7 +95,7 @@ func testVerbo(_ word: String) -> Bool {
     return false
 }
 
-func testPreposicao(_ word: String) -> Bool {
+@MainActor func testPreposicao(_ word: String) -> Bool {
 
     if preposicao_Com_Artigo.contains(word) {
         artigo_preposicao = true
@@ -127,7 +127,7 @@ func testPreposicao(_ word: String) -> Bool {
     return false
 }
 
-func testArtigoAfterPreposicao(_ word: String) -> Bool {
+@MainActor func testArtigoAfterPreposicao(_ word: String) -> Bool {
 
     if artigo_Masculino.contains(word) {
         masculino_preposicao = true
@@ -155,7 +155,7 @@ func testArtigoAfterPreposicao(_ word: String) -> Bool {
 
 }
 
-func testSubstantivoAfterPreposicao(_ word: String) -> Bool {
+@MainActor func testSubstantivoAfterPreposicao(_ word: String) -> Bool {
 
     if substantivo_Masculino.contains(word) {
         return masculino_preposicao == true && plural_preposicao == false
@@ -176,7 +176,7 @@ func testSubstantivoAfterPreposicao(_ word: String) -> Bool {
     return false
 }
 
-func checkGrammar(_ sentence: [String]) -> Bool {
+@MainActor func checkGrammar(_ sentence: [String]) -> Bool {
 
     // Artigo Section
 
