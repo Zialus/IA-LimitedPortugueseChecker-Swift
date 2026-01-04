@@ -6,7 +6,7 @@ let package = Package(
     name: "TugaChecker",
     dependencies: [
         .package(url: "https://github.com/onevcat/Rainbow.git", from: "4.2.1"),
-        .package(url: "https://github.com/SimplyDanny/SwiftLintPlugins", from: "0.61.0")
+        .package(url: "https://github.com/SimplyDanny/SwiftLintPlugins", from: "0.63.0")
     ],
     targets: [
         .executableTarget(
